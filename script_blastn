@@ -1,0 +1,15 @@
+#Opção 1- Instale o pacote BLAST: No Ubuntu e em outras distribuições baseadas no Debian, você pode instalar o BLAST facilmente usando o gerenciador de pacotes apt. Basta executar o seguinte comando no terminal:
+
+sudo apt install ncbi-blast+
+
+#Opção 2-Instalar BLAST 
+brew install blast
+
+#Conferir versão
+blastn -version
+
+#Criar um banco de dados de sequências para pesquisa no BLAST.
+makeblastdb -in subject_file.fasta -parse_seqids -dbtype nucl
+
+#Execuntando blastn (pesquisa de sequências de nucleotídeos)
+blastn -db subject.fasta -query query_file.fasta -evalue 1e-5 -out blastn.tsv  -outfmt 10
